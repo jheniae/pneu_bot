@@ -1,1 +1,1 @@
-web: python3.7 pneumatik_bot.py
+web: python3.6 pneumatik_bot.py
