@@ -1,7 +1,7 @@
 # * coding: utf-8*
 import requests
 import datetime
-
+import os
 import sys
 
 
@@ -39,7 +39,8 @@ class BotHandler:
 
 # send_mess(chat_id, 'You message goes here')
 # chat_id = get_chat_id(last_upgrade(get_update_json(url)))
-greet_bot = BotHandler(token)
+TOKEN = os.environ['BOT_TOKEN']
+greet_bot = BotHandler(TOKEN)
 greetings = ('здравствуй', 'привет', 'ку', 'здорово')
 now = datetime.datetime.now()
 
