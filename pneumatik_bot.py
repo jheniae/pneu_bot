@@ -39,7 +39,7 @@ class BotHandler:
 
 # send_mess(chat_id, 'You message goes here')
 # chat_id = get_chat_id(last_upgrade(get_update_json(url)))
-token = '635989365:AAGEjwP0upH05M04R-q3H4oJUxsNCCu171E'
+token = ''
 greet_bot = BotHandler(token)
 greeting = (u'здраствуй', u"привет", u"салют")
 now = datetime.datetime.now()
@@ -58,13 +58,13 @@ def main():
         last_chat_id = last_update['message']['chat']['id']
         last_chat_name = last_update['message']['chat']['first_name']
         if last_chat_text.lower() in greeting and today == now.day and 6 <= hour < 12:
-            greet_bot.send_message(last_chat_id, 'Доброу утро, {}'.format(last_chat_name))
+            greet_bot.send_message(last_chat_id, f'Доброу утро, {last_chat_name}')
             # today += 1
         elif last_chat_text.lower() in greeting and today == now.day and 12 <= hour < 17:
-            greet_bot.send_massge(last_chat_id, 'Добрый день {}'.format(last_chat_name))
+            greet_bot.send_massge(last_chat_id, f'Добрый день {last_chat_name}')
             # today += 1
         elif last_chat_text.lower() in greeting and today == now.day and 17 <= hour < 23:
-            greet_bot.send_massge(last_chat_id, 'Добрый вечер {}'.format(last_chat_name))
+            greet_bot.send_massge(last_chat_id, f'Добрый вечер {last_chat_name}')
             # today += 1
         new_offset = last_update_id + 1
 
